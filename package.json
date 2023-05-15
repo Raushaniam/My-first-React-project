@@ -15,6 +15,7 @@
   "author": "Raushaniia <mullakhmetova18@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "html-webpack-plugin": "^5.5.1",
     "webpack": "^5.82.1",
     "webpack-cli": "^5.1.1"
   }
