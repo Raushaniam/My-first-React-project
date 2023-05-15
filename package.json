@@ -1,0 +1,21 @@
+{
+  "name": "my-first-react-project",
+  "version": "1.0.0",
+  "description": "webpack project",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ts",
+    "react",
+    "webpack"
+  ],
+  "author": "Raushaniia <mullakhmetova18@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
