@@ -25,11 +25,20 @@ module.exports = {
             chunks: 'all'
         }
     },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'public'),
+        },
+        open: true,
+        compress: true,
+        port: 9000,
+        hot: false,
+        liveReload: true
+    },
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html'
-        }),
-        new CleanWebpackPlugin()
+        })
     ],
     module: {
         rules: [

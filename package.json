@@ -4,11 +4,11 @@
   "description": "webpack project",
   "private": true,
   "scripts": {
-    "start": "webpack",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack server"
   },
   "keywords": [
     "ts",
@@ -28,6 +28,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.82.1",
     "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
