@@ -25,35 +25,18 @@ const cssLoaders = extra => {
     return loaders;
 }
 
-const babelOptions = preset => {
-    const opts = {
-        presets: [
-            '@babel/preset-env',
-        ]
-    };
-    if(preset){
-        opts.presets.push(preset);
-    }
-    return opts;
-}
-
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: './index.jsx',
-        analytics: './analytics.ts'
+        main: './index.tsx'
     },
     output: {
         filename: filename('js'),
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js', '.json', '.png'],
-        alias: {
-            '@models': path.resolve(__dirname, 'src/models'),
-            '@': path.resolve(__dirname, 'src')
-        }
+        extensions: ['.js', '.json', '.png', '.tsx', '.ts'],
     },
     optimization: {
         splitChunks: {
@@ -75,19 +58,19 @@ module.exports = {
         hot: false,
         liveReload: true
     },
+    devtool: isDev ? 'source-map' : undefined,
     plugins: [
         new HTMLWebpackPlugin({
-            template: './index.html',
+            template: '../template/index.html',
             minify: {
                 collapseWhitespace: isProd
             }
         }),
-        new MiniCssExtractPlugin(),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin( {
             patterns: [
                 {
-                    from: path.resolve(__dirname, 'src/favicon.ico'),
+                    from: path.resolve(__dirname, 'template/favicon.ico'),
                     to: path.resolve(__dirname, 'dist')
                 }
             ],
@@ -104,10 +87,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: cssLoaders()
-            },
-            {
-                test: /\.less$/,
-                use: cssLoaders('less-loader')
             },
             {
                 test: /\.s[ac]ss$/,
@@ -130,29 +109,15 @@ module.exports = {
                 use: ['csv-loader']
             },
             {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: babelOptions()
-                }
-            },
-            {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: babelOptions('@babel/preset-typescript')
-                }
+                use: ['ts-loader']
             },
             {
-                test: /\.jsx$/,
+                test: /\.tsx$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: babelOptions('@babel/preset-react')
-                }
-            }
+                use: ['ts-loader']
+            },
         ]
     }
 }
