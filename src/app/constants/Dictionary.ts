@@ -1,3 +1,3 @@
 export const Dictionary = {
-    CINEMATRONIC: 'Cinematronic',
+    MovieVan: 'MovieVan',
 }

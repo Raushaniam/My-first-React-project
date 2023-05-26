@@ -5,6 +5,6 @@ import {Dictionary} from "./constants/Dictionary";
 
 export const App: FC = () => {
     return <div className="App">
-        <Header title={Dictionary.CINEMATRONIC}/>
+        <Header title={Dictionary.MovieVan}/>
     </div>
 }
