@@ -8,7 +8,7 @@ import {Button} from "../../Button/Button";
 export const Search: FC<ISearch> = ({placeholder}) => {
     return <div className="Search">
         <input className="SearchString" type="search" placeholder={placeholder}/>
-        <RadioBox />
+        <RadioBox title={Dictionary.Title} genre={Dictionary.Genre}/>
         <Button title={Dictionary.Search}/>
     </div>
 };
