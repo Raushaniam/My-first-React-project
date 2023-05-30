@@ -1,0 +1,31 @@
+@import "../../../constants/variables.scss";
+
+.RadioBox {
+  @include flexible ();
+  flex-direction: column;
+  height: 98%;
+  width: 8%;
+  min-width: 80px;
+  border: 1px solid #000000;
+
+  label input{
+    display: none;
+  }
+
+  label {
+    @include fullSize ();
+    text-align: center;
+    cursor: pointer;
+    background-color: $BackgroundOrange;
+    color: $Black;
+  }
+
+  label:hover {
+    background-color: #A64B05;
+    color: $White;
+  }
+
+  .RadioBtn {
+    border-bottom: 2px solid $Black;
+  }
+}

@@ -1,1 +1,13 @@
-.Header {}
+@import "../../constants/variables.scss";
+
+.Header {
+  width: 100%;
+  height: 32vh;
+  min-height: 200px;
+  @include flexible ();
+  flex-direction: column;
+  row-gap: 20px;
+  background-color: $BackgroundOrange;
+  border-bottom: 2px solid $Black;
+  box-shadow: 0 5px 12px 0 $Black;
+}

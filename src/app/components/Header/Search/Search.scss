@@ -1,0 +1,21 @@
+@import "../../../constants/variables.scss";
+
+.Search {
+  @include flexible ();
+  width: 100%;
+  min-height: 60px;
+  font-size: 20px;
+
+  .SearchString{
+    border: 2px solid $Black;
+    width: 62%;
+    height: 100%;
+    border-radius: 14px 0 0 14px;
+  }
+
+  .SearchString::placeholder {
+    font-family: "RobotoMedium", sans-serif;
+    padding-left: 20px;
+    font-size: 20px;
+  }
+}

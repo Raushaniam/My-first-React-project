@@ -1,0 +1,14 @@
+$BackgroundOrange: #ff7800;
+$Black: #000000;
+$White: #ffffff;
+
+@mixin flexible () {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fullSize () {
+  width: 100%;
+  height: 100%;
+}

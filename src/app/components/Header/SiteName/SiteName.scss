@@ -1,0 +1,24 @@
+@import "../../../constants/variables.scss";
+
+.IconBox {
+  min-width: 250px;
+  display: flex;
+
+  .Icon {
+    background-image: url("../../../../assets/png/van");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25%;
+  }
+
+  .SiteName {
+    font-size: 40px;
+    font-family: "RobotoMedium", sans-serif;
+    color: $Black;
+    text-decoration: underline;
+  }
+}
+
+
+
+

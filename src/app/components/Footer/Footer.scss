@@ -1,0 +1,11 @@
+@import "../../constants/variables.scss";
+
+.Footer {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  background-color: $Black;
+  flex: 0 0 auto;
+  @include flexible ();
+  font-size: 20px;
+}
