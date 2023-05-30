@@ -1,0 +1,15 @@
+.Search {
+  display: flex;
+  width: 100%;
+  min-height: 60px;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.SearchString{
+  border: 2px solid #000000;
+  width: 62%;
+  height: 100%;
+  border-radius: 14px 0px 0px 14px;
+}
