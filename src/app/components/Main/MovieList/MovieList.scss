@@ -1,0 +1,31 @@
+@import '../../../constants/variables.scss';
+
+.MovieList {
+  @include flexible();
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 20px 0;
+
+  .MovieCard {
+    border-radius: 2%;
+    background-color: $Black;
+    box-shadow: 0px 0px 20px 0px black;
+    :hover{
+      box-shadow: 0px 0px 20px 0px $BackgroundOrange;
+    }
+
+    .Movie {
+      @include flexible();
+      flex-direction: column;
+      color: $White;
+      text-overflow: ellipsis;
+
+      img {
+        width: 100%;
+        max-height: 450px;
+        border-top-left-radius: 2%;
+        border-top-right-radius: 2%;
+      }
+    }
+  }
+}

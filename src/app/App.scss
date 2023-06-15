@@ -22,7 +22,8 @@
 
 html,
 body {
-  @include fullSize ();
+  width: 100%;
+  height: auto;
 }
 
 body {
