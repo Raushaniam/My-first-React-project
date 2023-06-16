@@ -11,6 +11,17 @@
     width: 62%;
     height: 100%;
     border-radius: 14px 0 0 14px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding-left: 10px;
+    &:focus {
+      color: #212529;
+      background-color: $White;
+      border-color: #bdbdbd;
+      outline: 0;
+    }
 
     &::placeholder {
       font-family: "RobotoMedium", sans-serif;

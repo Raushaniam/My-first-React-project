@@ -2,10 +2,11 @@ import React, {FC} from "react";
 import {IHeaderMain} from "./IHeaderMain";
 import "./HeaderMain.scss";
 
-
-export const HeaderMain:FC<IHeaderMain> =({find, sorting, name}) => {
+export const HeaderMain:FC<IHeaderMain> =({find, all, sorting, name}) => {
     return <div className="HeaderMain">
-        <div className="Find">{find}</div>
+        <div className="Find">{find}
+            <span className="Count">{all}</span>
+        </div>
         <div className="Sorting">{sorting}
         <div className="Name">{name}</div>
         <div className="Dates">
@@ -16,5 +17,5 @@ export const HeaderMain:FC<IHeaderMain> =({find, sorting, name}) => {
             <div className="Date">2023</div>
         </div>
         </div>
-    </div>;
+    </div>
 }

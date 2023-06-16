@@ -10,7 +10,7 @@ const films = f as IMovie[];
 export const Main:FC<IMain> = () => {
     console.log(films);
     return <div className="Main">
-        <HeaderMain find={Dictionary.Found} sorting={Dictionary.Sort} name={Dictionary.Name}/>
+        <HeaderMain find={Dictionary.Found} all={Dictionary.All} sorting={Dictionary.Sort} name={Dictionary.Name}/>
         <MovieList films={films}/>
     </div>;
 }

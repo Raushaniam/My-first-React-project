@@ -6,8 +6,8 @@ export const MovieList: FC<IMovieList> = ({films}) => {
     return <div className="MovieList">
         {
             films.map(({id, img, year, name}) => {
-                return <div className="MovieCard">
-                    <div className="Movie" key={id}>
+                return <div className="MovieCard" key={id}>
+                    <div className="Movie">
                         <img className="Image" src={img} alt={name}></img>
                         <div className="Name">{name}</div>
                         <div className="Year">{year}</div>

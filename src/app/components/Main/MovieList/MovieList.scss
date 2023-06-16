@@ -6,13 +6,18 @@
   gap: 24px;
   padding: 20px 0;
 
+  .MovieCard:hover{
+      box-shadow: 0px 0px 20px 4px $BackgroundOrange;
+      margin: 0 2px;
+      transition: margin 0.3s;
+      border: 0.1px solid black;
+      border-radius: 2%;
+    }
+
   .MovieCard {
     border-radius: 2%;
     background-color: $Black;
     box-shadow: 0px 0px 20px 0px black;
-    :hover{
-      box-shadow: 0px 0px 20px 0px $BackgroundOrange;
-    }
 
     .Movie {
       @include flexible();

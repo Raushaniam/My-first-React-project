@@ -7,5 +7,6 @@ export const Dictionary = {
     Genre: 'genre',
     Sort: "sort by:",
     Name: "name",
-    Found: "movies found",
+    Found: "movies found: ",
+    All: "all",
 }
