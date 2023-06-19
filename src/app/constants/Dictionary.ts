@@ -5,4 +5,8 @@ export const Dictionary = {
     SearchStringText: 'Find your movie',
     Title: 'title',
     Genre: 'genre',
+    Sort: "sort by:",
+    Name: "name",
+    Found: "movies found: ",
+    All: "all",
 }

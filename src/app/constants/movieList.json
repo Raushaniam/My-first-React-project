@@ -1,0 +1,128 @@
+[
+  {
+    "id": "01",
+    "name": "Nope",
+    "genre": [
+      "Horror",
+      "Mystery",
+      "Science Fiction"
+    ],
+    "img": "/assets/jpg/nope.jpg",
+    "year": "2022"
+  },
+  {
+    "id": "02",
+    "name": "Fall",
+    "genre": "Thriller",
+    "img": "/assets/jpg/fall.jpg",
+    "year": "2022"
+  },
+  {
+    "id": "03",
+    "name": "A Million Ways to Die in the West",
+    "genre": [
+      "Comedy",
+      "Western"
+    ],
+    "img": "/assets/jpg/million.jpg",
+    "year": "2014"
+  },
+  {
+    "id": "04",
+    "name": "Pearl",
+    "genre": "Horror",
+    "img": "/assets/jpg/pearl.jpg",
+    "year": "2022"
+  },
+  {
+    "id": "05",
+    "name": "Lucy",
+    "genre": [
+      "Action",
+      "Science Fiction"
+    ],
+    "img": "/assets/jpg/lucy.jpg",
+    "year": "2014"
+  },
+  {
+    "id": "06",
+    "name": "The Suicide Squad",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Superhero",
+      "Comedy"
+    ],
+    "img": "/assets/jpg/suicidesquad.jpg",
+    "year": "2021"
+  },
+  {
+    "id": "07",
+    "name": "Free Guy",
+    "genre": [
+      "Comedy",
+      "Adventure",
+      "Science Fiction"
+    ],
+    "img": "/assets/jpg/freeguy.jpg",
+    "year": "2021"
+  },
+  {
+    "id": "08",
+    "name": "Jungle Cruise",
+    "genre": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ],
+    "img": "/assets/jpg/junglecruise.jpg",
+    "year": "2021"
+  },
+  {
+    "id": "09",
+    "name": "Encanto",
+    "genre": [
+      "Animation",
+      "Family",
+      "Fantasy",
+      "Comedy",
+      "Musical"
+    ],
+    "img": "/assets/jpg/encanto.jpg",
+    "year": "2021"
+  },
+  {
+    "id": "10",
+    "name": "Dungeons & Dragons",
+    "genre": [
+      "Fantasy",
+      "Adventure",
+      "Comedy"
+    ],
+    "img": "/assets/jpg/dd.jpg",
+    "year": "2023"
+  },
+  {
+    "id": "11",
+    "name": "Turning Red",
+    "genre": [
+      "Animation",
+      "Comedy",
+      "Family",
+      "Fantasy"
+    ],
+    "img": "/assets/jpg/turningred.jpg",
+    "year": "2022"
+  },
+  {
+    "id": "12",
+    "name": "Blade",
+    "genre": [
+      "Action",
+      "Horror",
+      "Superhero"
+    ],
+    "img": "/assets/jpg/blade.jpg",
+    "year": "1998"
+  }
+]

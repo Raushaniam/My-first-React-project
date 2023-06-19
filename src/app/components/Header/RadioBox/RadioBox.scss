@@ -18,11 +18,11 @@
     cursor: pointer;
     background-color: $BackgroundOrange;
     color: $Black;
-  }
 
-  label:hover {
-    background-color: #A64B05;
-    color: $White;
+    &:hover {
+      background-color: #A64B05;
+      color: $White;
+    }
   }
 
   .RadioBtn {
