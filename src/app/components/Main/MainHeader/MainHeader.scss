@@ -1,6 +1,6 @@
 @import '../../../constants/variables.scss';
 
-.HeaderMain {
+.MainHeader {
   @include flexible ();
   justify-content: space-between;
   padding: 0 20px;

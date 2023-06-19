@@ -1,4 +1,4 @@
-export interface IHeaderMain {
+export interface IMainHeader {
     find: string,
     all: string,
     sorting: string,

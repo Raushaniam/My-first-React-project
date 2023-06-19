@@ -1,9 +1,9 @@
 import React, {FC} from "react";
-import {IHeaderMain} from "./IHeaderMain";
-import "./HeaderMain.scss";
+import {IMainHeader} from "./IMainHeader";
+import "./MainHeader.scss";
 
-export const HeaderMain:FC<IHeaderMain> =({find, all, sorting, name}) => {
-    return <div className="HeaderMain">
+export const MainHeader:FC<IMainHeader> =({find, all, sorting, name}) => {
+    return <div className="MainHeader">
         <div className="Find">{find}
             <span className="Count">{all}</span>
         </div>
