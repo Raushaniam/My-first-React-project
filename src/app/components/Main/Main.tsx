@@ -7,10 +7,9 @@ import {MovieList} from "./MovieList/MovieList";
 import f from '../../constants/movieList.json'
 import {IMovie} from "../../types/IMovie";
 const films = f as IMovie[];
-export const Main:FC<IMain> = () => {
-    console.log(films);
+export const Main:FC<IMain> = ({showMovieDetails}) => {
     return <div className="Main">
         <MainHeader find={Dictionary.Found} all={Dictionary.All} sorting={Dictionary.Sort} name={Dictionary.Name}/>
-        <MovieList films={films}/>
+        <MovieList films={films} showMovieDetails={showMovieDetails}/>
     </div>;
 }

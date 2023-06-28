@@ -5,6 +5,6 @@ import {Main} from "./Main";
 
 export class MainContainer extends Component<IMain, any> {
     render () {
-        return <Main />
+        return <Main showMovieDetails={this.props.showMovieDetails}/>
     }
 }
