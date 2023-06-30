@@ -4,7 +4,6 @@ import "./MovieList.scss";
 
 export const MovieList: FC<IMovieList> = ({films, showMovieDetails}) => {
     const onMovieClick = (id: string) => {
-        console.log("clicked film");
         showMovieDetails(id);
     }
     return <div className="MovieList">

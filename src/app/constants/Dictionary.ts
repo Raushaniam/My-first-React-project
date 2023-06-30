@@ -9,4 +9,7 @@ export const Dictionary = {
     Name: "name",
     Found: "movies found: ",
     All: "all",
+    GENRES: "GENRES",
+    RELEASED: "RELEASED",
+    DURATION: "DURATION",
 }

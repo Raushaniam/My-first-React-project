@@ -15,7 +15,7 @@
   {
     "id": "02",
     "name": "Fall",
-    "genre": "Thriller",
+    "genre": ["Thriller"],
     "img": "/assets/jpg/fall.jpg",
     "year": "2022",
     "duration": "1h 47m",
@@ -36,7 +36,7 @@
   {
     "id": "04",
     "name": "Pearl",
-    "genre": "Horror",
+    "genre": ["Horror"],
     "img": "/assets/jpg/pearl.jpg",
     "year": "2022",
     "duration": "1h 42m",
