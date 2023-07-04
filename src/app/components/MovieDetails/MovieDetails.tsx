@@ -6,7 +6,6 @@ import {Button} from "../Button/Button";
 import {SiteName} from "../Header/SiteName/SiteName";
 import f from '../../constants/movieList.json';
 import {IMovie} from "../../types/IMovie";
-import {IMovieGenre} from "../../types/IMovieGenre";
 
 const films = f as IMovie[];
 

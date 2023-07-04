@@ -19,7 +19,7 @@ export const App: FC = () => {
     }
 
     return <div className="App">
-        {isShowDetails ?  <MovieDetailsContainer id={movieId} hideMovieDetails={hideMovieDetails}/> : <HeaderContainer title={Dictionary.MovieVan} placeholder={Dictionary.SearchStringText}/>}
+        {isShowDetails ?  <MovieDetailsContainer id={movieId} hideMovieDetails={hideMovieDetails}/> : <HeaderContainer title={Dictionary.MovieVan} placeholder={Dictionary.SearchStringText} />}
         <MainContainer showMovieDetails={showMovieDetails}/>
         <FooterContainer authorName={Dictionary.AuthorName}/>
     </div>

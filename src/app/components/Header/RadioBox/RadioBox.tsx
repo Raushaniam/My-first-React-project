@@ -1,10 +1,14 @@
-import React, {FC} from "react";
+import React, {FC, useState} from "react";
 import {IRadioBox} from "./IRadioBox";
 import "./RadioBox.scss";
 
-export const RadioBox:FC <IRadioBox> = ({title, genre}) => {
-     return <div className="RadioBox">
-         <label className="RadioBtn" htmlFor="title"><input id="title" type="radio"/>{title}</label>
-         <label htmlFor="genre"><input id="genre" type="radio"/>{genre}</label>
-     </div>;
+type RadioType = 'name'|'genre'
+export const RadioBox: FC<IRadioBox> = ({name, genre}) => {
+    const [selectedRadioType, setSelectedRadioType] = useState<RadioType>('name');
+    const onChangeRadio = (radioType: RadioType) => setSelectedRadioType(radioType);
+
+    return <div className="RadioBox">
+        <div className={selectedRadioType === 'name' ? 'ActiveRadioBtn Underlined' : 'Underlined RadioBtn'} onClick={() => onChangeRadio('name')}>{name}</div>
+        <div className={selectedRadioType === 'genre' ? 'ActiveRadioBtn' : 'RadioBtn'} onClick={() => onChangeRadio('genre')}>{genre}</div>
+    </div>;
 }

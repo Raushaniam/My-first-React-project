@@ -9,7 +9,7 @@ import {IMovie} from "../../types/IMovie";
 const films = f as IMovie[];
 export const Main:FC<IMain> = ({showMovieDetails}) => {
     return <div className="Main">
-        <MainHeader find={Dictionary.Found} all={Dictionary.All} sorting={Dictionary.Sort} name={Dictionary.Name}/>
+        <MainHeader find={Dictionary.Found} all={Dictionary.All} sorting={Dictionary.Sort} name={Dictionary.Name} genre={Dictionary.Genre}/>
         <MovieList films={films} showMovieDetails={showMovieDetails}/>
     </div>;
 }

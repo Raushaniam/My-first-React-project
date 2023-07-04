@@ -1,4 +1,6 @@
+import React from "react";
+
 export interface IRadioBox {
-    title: string,
+    name: string,
     genre: string,
 }
