@@ -17,6 +17,7 @@ export const App: FC = () => {
     const [movieId, setMovieId] = useState('');
     const [filterName, setFilterName] = useState('');
     const [filterType, setFilterType] = useState<RadioType>('name');
+
     const changeFilterType = (type: RadioType) => {
         setFilterType(type);
     }
@@ -58,7 +59,12 @@ export const App: FC = () => {
                 movieToSearch={movieToSearch}
             />
         }
-        <Main films={filteredList} showMovieDetails={showMovieDetails}/>
+        <Main
+            films={filteredList}
+            showMovieDetails={showMovieDetails}
+            filterType={filterType}
+            numberOfFilms={filteredList.length === 12 ? Dictionary.All : filteredList.length}
+        />
         <Footer authorName={Dictionary.AuthorName}/>
     </div>
 }
