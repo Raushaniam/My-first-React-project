@@ -29,7 +29,7 @@
     @include flexible ();
     column-gap: 20px;
 
-    .Name, .Genre {
+    .Name, .Genre, .All {
       font-family: "RobotoMedium", sans-serif;
       font-size: 18px;
       &:hover {

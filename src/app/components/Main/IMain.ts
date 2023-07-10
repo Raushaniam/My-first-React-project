@@ -6,5 +6,8 @@ export interface IMain {
     filterType: string,
     numberOfFilms: number | string,
     onClickDate: (date: number) => void,
-    date: number
+    date: number,
+    all: string,
+    clickedAll: () => void,
+    isClickedAll: boolean
 }

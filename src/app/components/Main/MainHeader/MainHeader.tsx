@@ -1,6 +1,9 @@
 import React, {FC, useState} from "react";
 import {IMainHeader} from "./IMainHeader";
 import "./MainHeader.scss";
+import f from '../../../constants/movieList.json'
+import {IMovie} from "../../../types/IMovie";
+const films = f as IMovie[];
 
 export const MainHeader: FC<IMainHeader> = (
     {
@@ -11,7 +14,10 @@ export const MainHeader: FC<IMainHeader> = (
         filterType,
         numberOfFilms,
         onClickDate,
-        date
+        date,
+        all,
+        clickedAll,
+        isClickedAll
     }
 ) => {
     return <div className="MainHeader">
@@ -19,6 +25,7 @@ export const MainHeader: FC<IMainHeader> = (
             <span className="Count">{numberOfFilms}</span>
         </div>
         <div className="Sorting">{sorting}
+            <div className={isClickedAll ? "All Focus" : "All"} onClick={() => clickedAll()}>{all}</div>
             <div className={filterType === 'name' ? "Name Focus" : "Name"}>{name}</div>
             <div className={filterType === 'genre' ? "Genre Focus" : "Genre"}>{genre}</div>
             <div className="Dates">

@@ -1,3 +1,5 @@
+import {IMovie} from "../../../types/IMovie";
+
 export interface IMainHeader {
     find: string,
     sorting: string,
@@ -6,5 +8,8 @@ export interface IMainHeader {
     filterType: string,
     numberOfFilms: number|string,
     onClickDate: (date: number) => void,
-    date: number
+    date: number,
+    all: string,
+    clickedAll: () => void,
+    isClickedAll: boolean
 }

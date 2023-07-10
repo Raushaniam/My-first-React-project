@@ -5,8 +5,18 @@ import {MainHeader} from "./MainHeader/MainHeader";
 import {Dictionary} from "../../constants/Dictionary";
 import {MovieList} from "./MovieList/MovieList";
 
-export const Main:FC<IMain> = (
-    {showMovieDetails, films, filterType, numberOfFilms, onClickDate, date}
+export const Main: FC<IMain> = (
+    {
+        showMovieDetails,
+        films,
+        filterType,
+        numberOfFilms,
+        onClickDate,
+        date,
+        all,
+        clickedAll,
+        isClickedAll
+    }
 ) => {
 
     return <div className="Main">
@@ -19,6 +29,9 @@ export const Main:FC<IMain> = (
             filterType={filterType}
             onClickDate={onClickDate}
             date={date}
+            all={all}
+            clickedAll={clickedAll}
+            isClickedAll={isClickedAll}
         />
         <MovieList films={films} showMovieDetails={showMovieDetails}/>
     </div>;

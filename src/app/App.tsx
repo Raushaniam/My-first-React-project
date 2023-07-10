@@ -18,6 +18,11 @@ export const App: FC = () => {
     const [filterName, setFilterName] = useState('');
     const [filterType, setFilterType] = useState<RadioType>('');
     const [date, setDate] = useState(0);
+    const [isClickedAll, setClickedAll] = useState(false)
+
+    const clickedAll = () => {
+        setClickedAll(true)
+    }
     const onClickDate = (date: number) => {
         setDate(date);
     }
@@ -32,7 +37,7 @@ export const App: FC = () => {
 
     const filteredList: IMovie[] = useMemo(() => {
         return films.filter((item) => {
-            if(Number(item.year) === date) {
+            if (Number(item.year) === date) {
                 return item.year.indexOf(String(date)) > -1;
             } else {
                 if (filterType === 'name') {
@@ -43,7 +48,7 @@ export const App: FC = () => {
                 }
             }
         });
-    }, [filterName, date]);
+    }, [filterName, date, isClickedAll]);
 
     const movieCounter = filteredList.length;
 
@@ -70,12 +75,15 @@ export const App: FC = () => {
             />
         }
         <Main
-            films={movieCounter === 0 ? films : filteredList}
+            films={movieCounter === 0 || isClickedAll ? films : filteredList}
             showMovieDetails={showMovieDetails}
             filterType={filterType}
-            numberOfFilms={movieCounter === 12 ? Dictionary.All : movieCounter}
+            numberOfFilms={movieCounter === 12 || isClickedAll ? Dictionary.All : movieCounter}
             onClickDate={onClickDate}
             date={date}
+            all={Dictionary.All}
+            clickedAll={clickedAll}
+            isClickedAll={isClickedAll}
         />
         <Footer authorName={Dictionary.AuthorName}/>
     </div>
