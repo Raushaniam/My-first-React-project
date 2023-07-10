@@ -5,4 +5,6 @@ export interface IMainHeader {
     genre: string,
     filterType: string,
     numberOfFilms: number|string,
+    onClickDate: (date: number) => void,
+    date: number
 }

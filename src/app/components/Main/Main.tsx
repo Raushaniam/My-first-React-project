@@ -5,7 +5,9 @@ import {MainHeader} from "./MainHeader/MainHeader";
 import {Dictionary} from "../../constants/Dictionary";
 import {MovieList} from "./MovieList/MovieList";
 
-export const Main:FC<IMain> = ({showMovieDetails, films, filterType, numberOfFilms}) => {
+export const Main:FC<IMain> = (
+    {showMovieDetails, films, filterType, numberOfFilms, onClickDate, date}
+) => {
 
     return <div className="Main">
         <MainHeader
@@ -15,6 +17,8 @@ export const Main:FC<IMain> = ({showMovieDetails, films, filterType, numberOfFil
             name={Dictionary.Name}
             genre={Dictionary.Genre}
             filterType={filterType}
+            onClickDate={onClickDate}
+            date={date}
         />
         <MovieList films={films} showMovieDetails={showMovieDetails}/>
     </div>;

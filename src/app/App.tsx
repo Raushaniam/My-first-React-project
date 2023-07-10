@@ -16,7 +16,11 @@ export const App: FC = () => {
     const [isShowDetails, setShowDetails] = useState(false);
     const [movieId, setMovieId] = useState('');
     const [filterName, setFilterName] = useState('');
-    const [filterType, setFilterType] = useState<RadioType>('name');
+    const [filterType, setFilterType] = useState<RadioType>('');
+    const [date, setDate] = useState(0);
+    const onClickDate = (date: number) => {
+        setDate(date);
+    }
 
     const changeFilterType = (type: RadioType) => {
         setFilterType(type);
@@ -28,14 +32,18 @@ export const App: FC = () => {
 
     const filteredList: IMovie[] = useMemo(() => {
         return films.filter((item) => {
-            if (filterType === 'name') {
-                return item.name.toLowerCase().indexOf(filterName.toLowerCase()) > -1;
-            }
-            if (filterType === 'genre') {
-                return !!item.genre.find((genre) => genre.toLowerCase() === filterName.toLowerCase() as IMovieGenre);
+            if(Number(item.year) === date) {
+                return item.year.indexOf(String(date)) > -1;
+            } else {
+                if (filterType === 'name') {
+                    return item.name.toLowerCase().indexOf(filterName.toLowerCase()) > -1;
+                }
+                if (filterType === 'genre') {
+                    return !!item.genre.find((genre) => genre.toLowerCase() === filterName.toLowerCase() as IMovieGenre);
+                }
             }
         });
-    }, [filterName]);
+    }, [filterName, date]);
 
     const movieCounter = filteredList.length;
 
@@ -62,10 +70,12 @@ export const App: FC = () => {
             />
         }
         <Main
-            films={filteredList}
+            films={movieCounter === 0 ? films : filteredList}
             showMovieDetails={showMovieDetails}
             filterType={filterType}
             numberOfFilms={movieCounter === 12 ? Dictionary.All : movieCounter}
+            onClickDate={onClickDate}
+            date={date}
         />
         <Footer authorName={Dictionary.AuthorName}/>
     </div>
