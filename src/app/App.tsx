@@ -37,6 +37,8 @@ export const App: FC = () => {
         });
     }, [filterName]);
 
+    const movieCounter = filteredList.length;
+
     const showMovieDetails = (id: string) => {
         setMovieId(id);
         setShowDetails(true);
@@ -63,7 +65,7 @@ export const App: FC = () => {
             films={filteredList}
             showMovieDetails={showMovieDetails}
             filterType={filterType}
-            numberOfFilms={filteredList.length === 12 ? Dictionary.All : filteredList.length}
+            numberOfFilms={movieCounter === 12 ? Dictionary.All : movieCounter}
         />
         <Footer authorName={Dictionary.AuthorName}/>
     </div>

@@ -13,6 +13,11 @@
     transition: background-color 0.2s;
   }
 
+  .Focus {
+    color: $BackgroundOrange;
+    transition: color 0.2s;
+  }
+
   .Find {
     .Count {
       font-family: "RobotoMedium", sans-serif;
