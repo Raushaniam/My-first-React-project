@@ -1,4 +1,3 @@
-
 import {ISort} from "../../../types/ISort";
 
 export interface IMainHeader {

@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, {FC} from "react";
 import {IMainHeader} from "./IMainHeader";
 import "./MainHeader.scss";
 import {ISortValue} from "../../../types/ISortValue";
@@ -37,14 +37,14 @@ export const MainHeader: FC<IMainHeader> = (
             <span className="Count">{numberOfFilms}</span>
         </div>
         <div className="Sorting">
-            <div className={(sortType.name.isActive && !sortType.year.isActive) ? "Name Focus" : "Name"}
+            <div className={sortType.name.isActive ? "Name Focus" : "Name"}
                  onClick={() => onChangeSortType('name')}>
                 {name}
                 <div className="Arrows">
                     <div className={sortType.name.value === 'asc' ? "Up" : "Down"}>&#8593;</div>
                 </div>
             </div>
-            <div className={(sortType.year.isActive && !sortType.name.isActive) ? "Dates Focus" : "Dates"}
+            <div className={sortType.year.isActive ? "Dates Focus" : "Dates"}
                  onClick={() => onChangeSortType('year')}>
                 {dates}
                 <div className="Arrows">
