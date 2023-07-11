@@ -9,6 +9,7 @@ import {Header} from "./components/Header/Header";
 import {Footer} from "./components/Footer/Footer";
 import {MovieDetails} from "./components/MovieDetails/MovieDetails";
 import {IMovieGenre} from "./types/IMovieGenre";
+import {ISort} from "./types/ISort";
 
 const films = f as IMovie[];
 
@@ -16,15 +17,14 @@ export const App: FC = () => {
     const [isShowDetails, setShowDetails] = useState(false);
     const [movieId, setMovieId] = useState('');
     const [filterName, setFilterName] = useState('');
-    const [filterType, setFilterType] = useState<RadioType>('');
-    const [date, setDate] = useState(0);
-    const [isClickedAll, setClickedAll] = useState(false)
+    const [filterType, setFilterType] = useState<RadioType>('name');
+    const [sortType, setSortType] = useState<ISort>({
+        name: {value: 'asc', isActive: true},
+        year: {value: 'asc', isActive: false}
+    });
 
-    const clickedAll = () => {
-        setClickedAll(true)
-    }
-    const onClickDate = (date: number) => {
-        setDate(date);
+    const changeSortType = (type: ISort) => {
+        setSortType(type);
     }
 
     const changeFilterType = (type: RadioType) => {
@@ -35,22 +35,74 @@ export const App: FC = () => {
         setFilterName(word);
     }
 
-    const filteredList: IMovie[] = useMemo(() => {
+    let filteredList: IMovie[] = useMemo(() => {
+        console.log(0)
         return films.filter((item) => {
-            if (Number(item.year) === date) {
-                return item.year.indexOf(String(date)) > -1;
-            } else {
-                if (filterType === 'name') {
-                    return item.name.toLowerCase().indexOf(filterName.toLowerCase()) > -1;
-                }
-                if (filterType === 'genre') {
-                    return !!item.genre.find((genre) => genre.toLowerCase() === filterName.toLowerCase() as IMovieGenre);
-                }
+            if (!filterName) {
+                return true;
             }
+            if (filterType === 'name') {
+                return item.name.toLowerCase().indexOf(filterName.toLowerCase()) > -1;
+            }
+            if (filterType === 'genre') {
+                return !!item.genre.find((genre) => genre.toLowerCase() === filterName.toLowerCase() as IMovieGenre);
+            }
+
         });
-    }, [filterName, date, isClickedAll]);
+    }, [filterName]);
 
     const movieCounter = filteredList.length;
+
+    filteredList = useMemo(() => {
+        if (sortType.name.value === 'asc') {
+            return filteredList.sort((a, b) => {
+                if (a.name < b.name) {
+                    return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                return 0;
+            });
+        } else {
+            return filteredList.sort((a, b) => {
+                if (a.name < b.name) {
+                    return 1;
+                }
+                if (a.name > b.name) {
+                    return -1;
+                }
+                return 0;
+            });
+        }
+
+    }, [sortType.name.value, filterName]);
+
+    filteredList = useMemo(() => {
+        if (sortType.year.value === 'asc') {
+            return filteredList.sort((a, b) => {
+                if (a.year < b.year) {
+                    return -1;
+                }
+                if (a.year > b.year) {
+                    return 1;
+                }
+                return 0;
+            });
+        } else {
+            return filteredList.sort((a, b) => {
+                if (a.year < b.year) {
+                    return 1;
+                }
+                if (a.year > b.year) {
+                    return -1;
+                }
+                return 0;
+            });
+        }
+    }, [sortType.year.value, filterName]);
+
+    console.log(filteredList)
 
     const showMovieDetails = (id: string) => {
         setMovieId(id);
@@ -75,15 +127,13 @@ export const App: FC = () => {
             />
         }
         <Main
-            films={movieCounter === 0 || isClickedAll ? films : filteredList}
+            films={filteredList}
             showMovieDetails={showMovieDetails}
             filterType={filterType}
-            numberOfFilms={movieCounter === 12 || isClickedAll ? Dictionary.All : movieCounter}
-            onClickDate={onClickDate}
-            date={date}
-            all={Dictionary.All}
-            clickedAll={clickedAll}
-            isClickedAll={isClickedAll}
+            numberOfFilms={movieCounter}
+            dates={Dictionary.REALISE}
+            changeSortType={changeSortType}
+            sortType={sortType}
         />
         <Footer authorName={Dictionary.AuthorName}/>
     </div>

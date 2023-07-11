@@ -9,13 +9,10 @@ export const Main: FC<IMain> = (
     {
         showMovieDetails,
         films,
-        filterType,
         numberOfFilms,
-        onClickDate,
-        date,
-        all,
-        clickedAll,
-        isClickedAll
+        dates,
+        changeSortType,
+        sortType
     }
 ) => {
 
@@ -23,15 +20,10 @@ export const Main: FC<IMain> = (
         <MainHeader
             find={Dictionary.Found}
             numberOfFilms={numberOfFilms}
-            sorting={Dictionary.Sort}
-            name={Dictionary.Name}
-            genre={Dictionary.Genre}
-            filterType={filterType}
-            onClickDate={onClickDate}
-            date={date}
-            all={all}
-            clickedAll={clickedAll}
-            isClickedAll={isClickedAll}
+            name={Dictionary.NAME}
+            dates={dates}
+            changeSortType={changeSortType}
+            sortType={sortType}
         />
         <MovieList films={films} showMovieDetails={showMovieDetails}/>
     </div>;

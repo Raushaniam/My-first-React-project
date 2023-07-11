@@ -1,39 +1,55 @@
 import React, {FC, useState} from "react";
 import {IMainHeader} from "./IMainHeader";
 import "./MainHeader.scss";
-import f from '../../../constants/movieList.json'
-import {IMovie} from "../../../types/IMovie";
-const films = f as IMovie[];
+import {ISortValue} from "../../../types/ISortValue";
 
 export const MainHeader: FC<IMainHeader> = (
     {
         find,
-        sorting,
         name,
-        genre,
-        filterType,
         numberOfFilms,
-        onClickDate,
-        date,
-        all,
-        clickedAll,
-        isClickedAll
+        dates,
+        changeSortType,
+        sortType
     }
 ) => {
+    const onChangeSortType = (sortName: 'year' | 'name') => {
+        let value: ISortValue;
+        if (sortType[sortName].value === 'asc') {
+            value = 'desc';
+        } else {
+            value = 'asc';
+        }
+        changeSortType({
+            year: {
+                value: sortName === "year" ? value : sortType.year.value,
+                isActive: sortName === "year",
+            },
+            name: {
+                value: sortName === "name" ? value : sortType.name.value,
+                isActive: sortName === "name",
+            }
+        });
+    }
+
     return <div className="MainHeader">
         <div className="Find">{find}
             <span className="Count">{numberOfFilms}</span>
         </div>
-        <div className="Sorting">{sorting}
-            <div className={isClickedAll ? "All Focus" : "All"} onClick={() => clickedAll()}>{all}</div>
-            <div className={filterType === 'name' ? "Name Focus" : "Name"}>{name}</div>
-            <div className={filterType === 'genre' ? "Genre Focus" : "Genre"}>{genre}</div>
-            <div className="Dates">
-                <div className={date === 1998 ? "Date Focus" : "Date"} onClick={() => onClickDate(1998)}>1998</div>
-                <div className={date === 2014 ? "Date Focus" : "Date"} onClick={() => onClickDate(2014)}>2014</div>
-                <div className={date === 2021 ? "Date Focus" : "Date"} onClick={() => onClickDate(2021)}>2021</div>
-                <div className={date === 2022 ? "Date Focus" : "Date"} onClick={() => onClickDate(2022)}>2022</div>
-                <div className={date === 2023 ? "Date Focus" : "Date"} onClick={() => onClickDate(2023)}>2023</div>
+        <div className="Sorting">
+            <div className={(sortType.name.isActive && !sortType.year.isActive) ? "Name Focus" : "Name"}
+                 onClick={() => onChangeSortType('name')}>
+                {name}
+                <div className="Arrows">
+                    <div className={sortType.name.value === 'asc' ? "Up" : "Down"}>&#8593;</div>
+                </div>
+            </div>
+            <div className={(sortType.year.isActive && !sortType.name.isActive) ? "Dates Focus" : "Dates"}
+                 onClick={() => onChangeSortType('year')}>
+                {dates}
+                <div className="Arrows">
+                    <div className={sortType.year.value === 'asc' ? "Up" : "Down"}>&#8593;</div>
+                </div>
             </div>
         </div>
     </div>

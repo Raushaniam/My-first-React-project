@@ -2,9 +2,9 @@ import React, {FC, useState} from "react";
 import {IRadioBox} from "./IRadioBox";
 import "./RadioBox.scss";
 
-export type RadioType = ''|'name'|'genre';
+export type RadioType = 'name'|'genre';
 export const RadioBox: FC<IRadioBox> = ({name, genre, changeFilterType}) => {
-    const [selectedRadioType, setSelectedRadioType] = useState<RadioType>('');
+    const [selectedRadioType, setSelectedRadioType] = useState<RadioType>('name');
     const onChangeRadio = (radioType: RadioType) => {
         setSelectedRadioType(radioType);
         changeFilterType(radioType);

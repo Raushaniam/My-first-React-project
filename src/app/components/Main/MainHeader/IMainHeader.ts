@@ -1,15 +1,11 @@
-import {IMovie} from "../../../types/IMovie";
+
+import {ISort} from "../../../types/ISort";
 
 export interface IMainHeader {
     find: string,
-    sorting: string,
     name: string,
-    genre: string,
-    filterType: string,
     numberOfFilms: number|string,
-    onClickDate: (date: number) => void,
-    date: number,
-    all: string,
-    clickedAll: () => void,
-    isClickedAll: boolean
+    dates: string,
+    changeSortType: (type: ISort) => void,
+    sortType: ISort
 }
