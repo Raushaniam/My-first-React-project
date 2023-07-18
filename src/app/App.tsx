@@ -1,7 +1,6 @@
-import React, {FC, useMemo, useState} from "react";
+import React, {FC, useEffect, useMemo, useState} from "react";
 import './App.scss';
 import {Dictionary} from "./constants/Dictionary";
-import f from './constants/movieList.json'
 import {IMovie} from "./types/IMovie";
 import {RadioType} from "./components/Header/RadioBox/RadioBox";
 import {Main} from "./components/Main/Main";
@@ -11,9 +10,8 @@ import {MovieDetails} from "./components/MovieDetails/MovieDetails";
 import {IMovieGenre} from "./types/IMovieGenre";
 import {ISort} from "./types/ISort";
 
-const films = f as IMovie[];
-
 export const App: FC = () => {
+    const [films, setFilms] = useState<IMovie[]>([]);
     const [isShowDetails, setShowDetails] = useState(false);
     const [movieId, setMovieId] = useState('');
     const [filterName, setFilterName] = useState('');
@@ -22,6 +20,15 @@ export const App: FC = () => {
         name: {value: 'asc', isActive: true},
         year: {value: 'asc', isActive: false}
     });
+
+    useEffect(() => {
+        fetch(' http://localhost:3000/films').then((result) => {
+            return result.json()
+        }).then((films) => {
+            setFilms(films)
+        })
+
+    }, [])
 
     const changeSortType = (type: ISort) => {
         setSortType(type);
@@ -49,7 +56,7 @@ export const App: FC = () => {
             }
 
         });
-    }, [filterName]);
+    }, [filterName, films]);
 
     const movieCounter = filteredList.length;
 
@@ -76,7 +83,7 @@ export const App: FC = () => {
             });
         }
 
-    }, [sortType.name.value, filterName]);
+    }, [sortType.name.value, filterName, films]);
 
     filteredList = useMemo(() => {
         if (sortType.year.value === 'asc') {
@@ -100,7 +107,7 @@ export const App: FC = () => {
                 return 0;
             });
         }
-    }, [sortType.year.value, filterName]);
+    }, [sortType.year.value, filterName, films]);
 
     console.log(filteredList)
 
@@ -118,6 +125,7 @@ export const App: FC = () => {
             <MovieDetails
                 id={movieId}
                 hideMovieDetails={hideMovieDetails}
+                films={films}
             /> :
             <Header
                 title={Dictionary.MovieVan}

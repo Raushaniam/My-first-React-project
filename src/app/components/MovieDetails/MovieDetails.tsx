@@ -4,12 +4,9 @@ import "./MovieDetails.scss";
 import {Dictionary} from "../../constants/Dictionary";
 import {Button} from "../Button/Button";
 import {SiteName} from "../Header/SiteName/SiteName";
-import f from '../../constants/movieList.json';
 import {IMovie} from "../../types/IMovie";
 
-const films = f as IMovie[];
-
-export const MovieDetails: FC<IMovieDetails> = ({id, hideMovieDetails}) => {
+export const MovieDetails: FC<IMovieDetails> = ({id, hideMovieDetails, films}) => {
     const film: IMovie = useMemo(() => {
         return films.find((item) => {
             return item.id === id;
