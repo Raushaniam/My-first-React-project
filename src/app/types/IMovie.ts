@@ -5,5 +5,7 @@ export interface IMovie {
     name: string,
     genre: IMovieGenre[],
     img: string,
-    year: string
+    year: string,
+    duration: string,
+    description: string
 }

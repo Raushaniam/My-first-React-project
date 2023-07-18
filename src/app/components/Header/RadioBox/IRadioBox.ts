@@ -1,4 +1,7 @@
+import {RadioType} from "./RadioBox";
+
 export interface IRadioBox {
-    title: string,
+    name: string,
     genre: string,
+    changeFilterType: (type: RadioType) => void,
 }

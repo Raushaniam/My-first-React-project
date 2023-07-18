@@ -1,0 +1,88 @@
+@import '../../../constants/variables.scss';
+
+.MainHeader {
+  @include flexible();
+  justify-content: space-between;
+  padding: 0 20px;
+  min-height: 60px;
+  background-color: $Black;
+  color: $White;
+  transition: background-color 0.2s;
+
+  .Focus {
+    color: $BackgroundOrange;
+    transition: color 0.2s;
+  }
+
+  .Find {
+    .Count {
+      font-family: "RobotoMedium", sans-serif;
+      font-size: 18px;
+    }
+  }
+
+  .Sorting {
+    @include flexible();
+    column-gap: 20px;
+
+    .Arrows {
+    @include flexible();
+      column-gap: 6px;
+      cursor: pointer;
+
+      .Up {
+        height: 26px;
+        transform-origin: center;
+        transition: transform 1s;
+
+        &:hover {
+          color: $BackgroundOrange;
+          transition: color 0.2s;
+        }
+      }
+
+      .Down {
+        height: 26px;
+        transform: rotate(540deg);
+        transition: transform 1s;
+
+        &:hover {
+          color: $BackgroundOrange;
+          transition: color 0.2s;
+        }
+      }
+    }
+
+    .Name {
+      @include flexible();
+      column-gap: 10px;
+      font-family: "RobotoMedium", sans-serif;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:hover {
+        color: $BackgroundOrange;
+        transition: color 0.2s;
+      }
+    }
+
+    .Dates {
+      @include flexible();
+      column-gap: 10px;
+      font-family: "RobotoMedium", sans-serif;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:active {
+        color: $BackgroundOrange;
+        transition: color 0.2s;
+      }
+
+      &:hover {
+        color: $BackgroundOrange;
+        transition: color 0.2s;
+        font-weight: 600;
+      }
+    }
+  }
+}

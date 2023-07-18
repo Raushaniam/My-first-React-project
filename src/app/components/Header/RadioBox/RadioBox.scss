@@ -2,30 +2,32 @@
 
 .RadioBox {
   @include flexible ();
+  height: 100%;
   flex-direction: column;
-  height: 98%;
   width: 8%;
   min-width: 80px;
   border: 1px solid #000000;
 
-  label input{
-    display: none;
+  .RadioBtn, .ActiveRadioBtn {
+      @include fullSize ();
+      text-align: center;
+      cursor: pointer;
   }
 
-  label {
-    @include fullSize ();
-    text-align: center;
-    cursor: pointer;
-    background-color: $BackgroundOrange;
-    color: $Black;
+  .ActiveRadioBtn {
+    background-color: $Black;
+    color: $White;
+  }
 
+  .RadioBtn {
+    color: $Black;
     &:hover {
       background-color: #A64B05;
       color: $White;
     }
   }
 
-  .RadioBtn {
+  .Underlined{
     border-bottom: 2px solid $Black;
   }
 }
