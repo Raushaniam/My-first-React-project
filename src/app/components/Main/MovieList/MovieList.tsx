@@ -1,8 +1,19 @@
 import React, {FC} from "react";
 import {IMovieList} from "./IMovieList";
 import "./MovieList.scss";
+import {useDispatch, useSelector} from "react-redux";
+import {IStore} from "../../../types/IStore";
+import {setSelectedMovie, setShowDetails} from "../../../../store/slices/films";
 
-export const MovieList: FC<IMovieList> = ({films, showMovieDetails}) => {
+export const MovieList: FC<IMovieList> = () => {
+    const films = useSelector((state: IStore) => {
+        return state.filteredFilms
+    });
+    const dispatch = useDispatch<any>();
+    const showMovieDetails = (id: string) => {
+        dispatch(setSelectedMovie(id));
+        dispatch(setShowDetails(true));
+    }
     const onMovieClick = (id: string) => {
         showMovieDetails(id);
     }

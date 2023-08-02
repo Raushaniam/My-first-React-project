@@ -4,11 +4,11 @@ import "./Main.scss";
 import {MainHeader} from "./MainHeader/MainHeader";
 import {Dictionary} from "../../constants/Dictionary";
 import {MovieList} from "./MovieList/MovieList";
+import {useSelector} from "react-redux";
+import {IStore} from "../../types/IStore";
 
 export const Main: FC<IMain> = (
     {
-        showMovieDetails,
-        films,
         numberOfFilms,
         dates,
         changeSortType,
@@ -25,6 +25,6 @@ export const Main: FC<IMain> = (
             changeSortType={changeSortType}
             sortType={sortType}
         />
-        <MovieList films={films} showMovieDetails={showMovieDetails}/>
+        <MovieList/>
     </div>;
 }

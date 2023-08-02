@@ -17,7 +17,6 @@ export const Search: FC<ISearch> = ({placeholder, changeFilterType, movieToSearc
         <input
             className="SearchString"
             onChange={(event) => {
-                console.log(event)
                 setsearchText(event.target.value);
             }}
             type="search"

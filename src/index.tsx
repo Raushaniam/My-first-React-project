@@ -1,8 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { App } from "./app/App";
+import {App} from "./app/App";
 import {createRoot} from "react-dom/client";
+import {Provider} from "react-redux";
+import store from "./store/store";
 
 const rootNode = document.getElementById("root");
 const root = createRoot(rootNode);
-root.render(<App />);
+root.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>
+);

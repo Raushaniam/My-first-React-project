@@ -1,19 +1,20 @@
-import React, {FC, useMemo} from "react";
+import React, {FC} from "react";
 import {IMovieDetails} from "./IMovieDetails";
 import "./MovieDetails.scss";
 import {Dictionary} from "../../constants/Dictionary";
 import {Button} from "../Button/Button";
 import {SiteName} from "../Header/SiteName/SiteName";
-import {IMovie} from "../../types/IMovie";
+import {useDispatch, useSelector} from "react-redux";
+import {IStore} from "../../types/IStore";
+import {setShowDetails} from "../../../store/slices/films";
 
-export const MovieDetails: FC<IMovieDetails> = ({id, hideMovieDetails, films}) => {
-    const film: IMovie = useMemo(() => {
-        return films.find((item) => {
-            return item.id === id;
-        });
-    }, [id]);
+export const MovieDetails: FC<IMovieDetails> = () => {
+    const dispatch = useDispatch<any>();
+    const film = useSelector((state: IStore) => {
+        return state.selectedFilm
+    });
     const onHideMovieDetails = () => {
-        hideMovieDetails();
+        dispatch(setShowDetails(false))
     }
 
     return <div className="MovieDetails">
