@@ -26,6 +26,6 @@ export const router = createBrowserRouter([
     },
     {
         path: routes.ERROR,
-        errorElement: <NotFound/>
+        element: <NotFound/>
     }
 ]);

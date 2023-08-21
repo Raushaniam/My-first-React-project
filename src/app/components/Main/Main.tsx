@@ -35,7 +35,9 @@ export const Main: FC<IMain> = () => {
 
     useEffect(() => {
         dispatch(getTokenFromLocalStorage());
-        dispatch(getMovieList())
+        setTimeout(() => {
+            dispatch(getMovieList());
+        })
     }, []);
 
     useEffect(() => {

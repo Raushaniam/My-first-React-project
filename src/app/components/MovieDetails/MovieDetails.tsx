@@ -6,17 +6,24 @@ import {Button} from "../Button/Button";
 import {SiteName} from "../Header/SiteName/SiteName";
 import {useDispatch, useSelector} from "react-redux";
 import {IStore} from "../../types/IStore";
+import {useNavigate} from "react-router";
+import {routes} from "../../constants/routes";
 
 export const MovieDetails: FC<IMovieDetails> = () => {
     const dispatch = useDispatch<any>();
+    const navigate = useNavigate();
     const film = useSelector((state: IStore) => {
         return state.selectedFilm
     });
 
+    const toHomepage = () => {
+        navigate(routes.HOME);
+    }
+
     return <div className="MovieDetails">
         <div className="SiteName">
             <SiteName title={Dictionary.MovieVan}/>
-            <Button title={Dictionary.Search}/>
+            <Button title={Dictionary.Search} onClick={toHomepage}/>
         </div>
         <div className="Film">
             <img className="Image" src={film.img} alt={film.name}></img>

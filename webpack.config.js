@@ -19,7 +19,7 @@ const cssLoaders = extra => {
         },
         "css-loader",
     ];
-    if(extra) {
+    if (extra) {
         loaders.push(extra);
     }
     return loaders;
@@ -52,6 +52,7 @@ module.exports = {
         static: {
             directory: path.join(__dirname, 'public'),
         },
+        historyApiFallback: true,
         open: true,
         compress: true,
         port: 9000,
@@ -67,7 +68,7 @@ module.exports = {
             }
         }),
         new CleanWebpackPlugin(),
-        new CopyWebpackPlugin( {
+        new CopyWebpackPlugin({
             patterns: [
                 {
                     from: path.resolve(__dirname, 'template/favicon.ico'),

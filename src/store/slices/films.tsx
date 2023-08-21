@@ -21,7 +21,13 @@ import {removeTokenInLocalStorage} from "../thunks/removeTokenInLocalStorage";
 export const filmsSlice = createSlice<IStore, SliceCaseReducers<IStore>, 'films'>({
     name: 'films',
     extraReducers: (builder) => {
-        builder.addCase(getMovieList.fulfilled, (state, action) => {
+        builder.addCase(getTokenFromLocalStorage.fulfilled, (state, action) => {
+            if (action.payload) {
+                state.isLoggedIn = true;
+            }
+            state.authToken = action.payload;
+            console.log(state);
+        }).addCase(getMovieList.fulfilled, (state, action) => {
             state.films = action.payload;
             state.filteredFilms = action.payload;
             state.error.message = '';
@@ -38,11 +44,6 @@ export const filmsSlice = createSlice<IStore, SliceCaseReducers<IStore>, 'films'
                 state.films = [];
             }
         }).addCase(setTokenToLocalStorage.fulfilled, (state, action) => {
-            state.authToken = action.payload;
-        }).addCase(getTokenFromLocalStorage.fulfilled, (state, action) => {
-            if (action.payload) {
-                state.isLoggedIn = true;
-            }
             state.authToken = action.payload;
         }).addCase(registerUser.fulfilled, (state, action) => {
             state.authToken = action.payload.accessToken;

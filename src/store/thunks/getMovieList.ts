@@ -7,6 +7,7 @@ export const getMovieList = createAsyncThunk<IMovie[]>(
     actionTypes.getMovieList,
     async (_, thunkAPI) => {
         const state = thunkAPI.getState() as IStore;
+        console.log(state);
         try {
             const response = await fetch(' http://localhost:3000/films',
                 {
