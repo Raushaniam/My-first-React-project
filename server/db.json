@@ -154,5 +154,23 @@
       "duration": "2h 1m",
       "description": "The Daywalker known as \"Blade\" - a half-vampire, half-mortal man - becomes the protector of humanity against an underground army of vampires."
     }
+  ],
+  "users": [
+    {
+      "email": "123@gmail.com",
+      "password": "$2a$10$XkAb.53T3cgDBZ//ysHR4OgZ/44GsgewQJ2yj37LtQ7ecR0ksypx2",
+      "firstname": "r",
+      "lastname": "m",
+      "age": 29,
+      "id": 1
+    },
+    {
+      "email": "456@gmail.com",
+      "password": "$2a$10$wPxL6qkx4wy9bxV2nlBcV.RpgO8bVKJBB3I6LNxYh7MdCDozfa502",
+      "firstname": "v",
+      "lastname": "d",
+      "age": 33,
+      "id": 2
+    }
   ]
 }

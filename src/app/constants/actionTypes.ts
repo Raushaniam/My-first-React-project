@@ -1,5 +1,8 @@
-import {getMovieList} from "../../store/thunks/getMovieList";
-
 export enum actionTypes {
-    getMovieList= 'getMovieList',
+    getMovieList = 'getMovieList',
+    getTokenFromLocalStorage = 'getTokenFromLocalStorage',
+    setTokenToLocalStorage = 'setTokenToLocalStorage',
+    registerUser = 'registerUser',
+    loginUser = 'loginUser'
+
 }

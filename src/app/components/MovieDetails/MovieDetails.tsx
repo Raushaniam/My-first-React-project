@@ -6,21 +6,17 @@ import {Button} from "../Button/Button";
 import {SiteName} from "../Header/SiteName/SiteName";
 import {useDispatch, useSelector} from "react-redux";
 import {IStore} from "../../types/IStore";
-import {setShowDetails} from "../../../store/slices/films";
 
 export const MovieDetails: FC<IMovieDetails> = () => {
     const dispatch = useDispatch<any>();
     const film = useSelector((state: IStore) => {
         return state.selectedFilm
     });
-    const onHideMovieDetails = () => {
-        dispatch(setShowDetails(false))
-    }
 
     return <div className="MovieDetails">
         <div className="SiteName">
             <SiteName title={Dictionary.MovieVan}/>
-            <Button title={Dictionary.Search} onClick={onHideMovieDetails}/>
+            <Button title={Dictionary.Search}/>
         </div>
         <div className="Film">
             <img className="Image" src={film.img} alt={film.name}></img>

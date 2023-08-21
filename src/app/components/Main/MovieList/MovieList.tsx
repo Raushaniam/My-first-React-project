@@ -3,7 +3,7 @@ import {IMovieList} from "./IMovieList";
 import "./MovieList.scss";
 import {useDispatch, useSelector} from "react-redux";
 import {IStore} from "../../../types/IStore";
-import {setSelectedMovie, setShowDetails} from "../../../../store/slices/films";
+import {setSelectedMovie} from "../../../../store/slices/films";
 
 export const MovieList: FC<IMovieList> = () => {
     const films = useSelector((state: IStore) => {
@@ -12,14 +12,13 @@ export const MovieList: FC<IMovieList> = () => {
     const dispatch = useDispatch<any>();
     const showMovieDetails = (id: string) => {
         dispatch(setSelectedMovie(id));
-        dispatch(setShowDetails(true));
     }
     const onMovieClick = (id: string) => {
         showMovieDetails(id);
     }
     return <div className="MovieList">
         {
-            films.map(({id, img, year, name}) => {
+            films && films.map(({id, img, year, name}) => {
                 return <div className="MovieCard" key={id} onClick={() => onMovieClick(id)}>
                     <div className="Movie">
                         <img className="Image" src={img} alt={name}></img>
