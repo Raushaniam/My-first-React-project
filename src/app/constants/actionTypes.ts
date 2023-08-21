@@ -3,6 +3,7 @@ export enum actionTypes {
     getTokenFromLocalStorage = 'getTokenFromLocalStorage',
     setTokenToLocalStorage = 'setTokenToLocalStorage',
     registerUser = 'registerUser',
-    loginUser = 'loginUser'
+    loginUser = 'loginUser',
+    removeTokenInLocalStorage = 'removeTokenInLocalStorage'
 
 }

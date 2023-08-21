@@ -16,6 +16,7 @@ import {setTokenToLocalStorage} from "../thunks/setTokenToLocalStorage";
 import {getTokenFromLocalStorage} from "../thunks/getTokenFromLocalStorage";
 import {registerUser} from "../thunks/registerUser";
 import {loginUser} from "../thunks/loginUser";
+import {removeTokenInLocalStorage} from "../thunks/removeTokenInLocalStorage";
 
 export const filmsSlice = createSlice<IStore, SliceCaseReducers<IStore>, 'films'>({
     name: 'films',
@@ -59,6 +60,9 @@ export const filmsSlice = createSlice<IStore, SliceCaseReducers<IStore>, 'films'
             state.error = {
                 message: action.payload as any
             };
+        }).addCase(removeTokenInLocalStorage.fulfilled, (state, action) => {
+            state.authToken = action.payload as any;
+            state.isLoggedIn = false;
         })
     },
     initialState: {
