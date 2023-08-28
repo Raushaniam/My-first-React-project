@@ -1,0 +1,63 @@
+@import "../../constants/variables.scss";
+
+.RegistrationForm {
+  @include flexible();
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: $BackgroundOrange;
+  color: $Black;
+
+  .Register {
+    min-width: 300px;
+    height: auto;
+    @include flexible();
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 18px;
+    padding: 1%;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: #FFB573;
+
+    .Wrapper {
+      width: 100%;
+      @include flexible();
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 6px;
+
+      .Title {
+        min-width: 90px;
+      }
+
+      input {
+        outline: 0;
+        border: 1px solid $Black;
+        border-radius: 4px;
+        background: none;
+        width: 100%;
+        height: 30px;
+        font-size: 18px;
+
+        &:focus {
+          color: $Black;
+          background-color: transparent;
+          border-color: $LightOrange;
+          outline: 0;
+        }
+      }
+    }
+
+    button {
+      margin: 0 auto;
+      border-right-width: 1px;
+      border-radius: 14px;
+      padding: 4px 6px;
+    }
+  }
+}

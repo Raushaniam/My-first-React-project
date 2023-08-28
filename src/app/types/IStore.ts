@@ -4,5 +4,10 @@ export interface IStore {
     films: IMovie[],
     filteredFilms: IMovie[],
     selectedFilm: IMovie,
-    showDetails: boolean
+    filterName: string,
+    authToken: string,
+    isLoggedIn: boolean,
+    error: {
+        message: string,
+    }
 }

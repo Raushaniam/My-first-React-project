@@ -1,0 +1,12 @@
+@import "../../../constants/variables.scss";
+
+.Logout {
+  margin-left: auto;
+  margin-right: 20px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    color: $Black;
+  }
+}
