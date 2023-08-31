@@ -11,6 +11,12 @@ describe('sortMoviesByYearReducer', () => {
         },
         {
             year: '2012'
+        },
+        {
+            year: '2012'
+        },
+        {
+            year: '2022'
         }
     ];
 
@@ -22,6 +28,12 @@ describe('sortMoviesByYearReducer', () => {
             year: '2012'
         },
         {
+            year: '2012'
+        },
+        {
+            year: '2022'
+        },
+        {
             year: '2023'
         }
     ];
@@ -29,6 +41,12 @@ describe('sortMoviesByYearReducer', () => {
     const sortedFilmsByDesc = [
         {
             year: '2023'
+        },
+        {
+            year: '2022'
+        },
+        {
+            year: '2012'
         },
         {
             year: '2012'

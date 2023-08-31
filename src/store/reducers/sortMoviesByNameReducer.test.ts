@@ -4,10 +4,19 @@ import {sortMoviesByNameReducer} from "./sortMoviesByNameReducer";
 describe('sortMoviesByNameReducer', () => {
     const films = [
         {
-            name: 'Fall'
+            name: 'A Million ways...'
         },
         {
             name: 'Pearl'
+        },
+        {
+            name: 'Fall'
+        },
+        {
+            name: 'Nope'
+        },
+        {
+            name: 'Fall'
         },
         {
             name: 'Blade'
@@ -16,10 +25,19 @@ describe('sortMoviesByNameReducer', () => {
 
     const sortedFilmsByAsc = [
         {
+            name: 'A Million ways...'
+        },
+        {
             name: 'Blade'
         },
         {
             name: 'Fall'
+        },
+        {
+            name: 'Fall'
+        },
+        {
+            name: 'Nope'
         },
         {
             name: 'Pearl'
@@ -31,10 +49,19 @@ describe('sortMoviesByNameReducer', () => {
             name: 'Pearl'
         },
         {
+            name: 'Nope'
+        },
+        {
+            name: 'Fall'
+        },
+        {
             name: 'Fall'
         },
         {
             name: 'Blade'
+        },
+        {
+            name: 'A Million ways...'
         }
     ];
 

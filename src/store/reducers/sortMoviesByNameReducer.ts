@@ -3,27 +3,19 @@ import {IMovie} from "../../app/types/IMovie";
 
 export const sortMoviesByNameReducer = (state: IStore, action: any) => {
     const {sortType} = action.payload;
-    let sortedFilms: IMovie[];
+    const sortedFilms: IMovie[] = state.films.sort((a, b) => {
+        if (a.name < b.name) {
+            return -1;
+        }
+        if (a.name > b.name) {
+            return 1;
+        }
+        return 0;
+    });
     if (sortType === 'asc') {
-        sortedFilms = state.films.sort((a, b) => {
-            if (a.name < b.name) {
-                return -1;
-            }
-            if (a.name > b.name) {
-                return 1;
-            }
-            return 0;
-        });
+        state.filteredFilms = sortedFilms;
     } else {
-        sortedFilms = state.films.sort((a, b) => {
-            if (a.name < b.name) {
-                return 1;
-            }
-            if (a.name > b.name) {
-                return -1;
-            }
-            return 0;
-        });
+        state.filteredFilms = sortedFilms.reverse();
     }
-    state.filteredFilms = sortedFilms;
+
 }
