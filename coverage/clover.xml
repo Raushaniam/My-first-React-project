@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693405322035" clover="3.2.0">
-  <project timestamp="1693405322035" name="All files">
-    <metrics statements="54" coveredstatements="54" conditionals="13" coveredconditionals="13" methods="11" coveredmethods="11" elements="78" coveredelements="78" complexity="0" loc="54" ncloc="54" packages="2" files="6" classes="6"/>
+<coverage generated="1694094971230" clover="3.2.0">
+  <project timestamp="1694094971230" name="All files">
+    <metrics statements="79" coveredstatements="76" conditionals="20" coveredconditionals="20" methods="17" coveredmethods="15" elements="116" coveredelements="111" complexity="0" loc="79" ncloc="79" packages="5" files="10" classes="10"/>
+    <package name="app.constants">
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="actionTypes.ts" path="D:\Programming\My-first-React-project\src\app\constants\actionTypes.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+      <file name="localStorageKeys.ts" path="D:\Programming\My-first-React-project\src\app\constants\localStorageKeys.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="app.types">
       <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="IMovieGenre.ts" path="D:\Programming\My-first-React-project\src\app\types\IMovieGenre.ts">
@@ -20,6 +38,21 @@
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.payloadCreators">
+      <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="loginUserCreator.ts" path="D:\Programming\My-first-React-project\src\store\payloadCreators\loginUserCreator.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="cond" truecount="3" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
       </file>
     </package>
     <package name="store.reducers">
@@ -78,6 +111,19 @@
         <line num="15" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="16" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="store.thunks">
+      <metrics statements="7" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="setTokenToLocalStorage.ts" path="D:\Programming\My-first-React-project\src\store\thunks\setTokenToLocalStorage.ts">
+        <metrics statements="7" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
       </file>
     </package>
   </project>
